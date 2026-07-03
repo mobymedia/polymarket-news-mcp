@@ -41,12 +41,12 @@ Read-only by design: no API keys, no wallet, no trading. Live odds and links onl
 Requires Python ≥3.10. With [uv](https://docs.astral.sh/uv/) (no install needed):
 
 ```bash
-uvx --from git+https://github.com/mobymedia/polymarket-news-mcp polymarket-news-mcp
+uvx polymarket-news-mcp
 ```
 
 **Claude Code**
 ```bash
-claude mcp add polymarket-news -- uvx --from git+https://github.com/mobymedia/polymarket-news-mcp polymarket-news-mcp
+claude mcp add polymarket-news -- uvx polymarket-news-mcp
 ```
 
 **Claude Desktop / any MCP client** (`claude_desktop_config.json`):
@@ -55,14 +55,13 @@ claude mcp add polymarket-news -- uvx --from git+https://github.com/mobymedia/po
   "mcpServers": {
     "polymarket-news": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/mobymedia/polymarket-news-mcp",
-               "polymarket-news-mcp"]
+      "args": ["polymarket-news-mcp"]
     }
   }
 }
 ```
 
-Or classic pip: `pip install git+https://github.com/mobymedia/polymarket-news-mcp`
+Or classic pip: `pip install polymarket-news-mcp`
 then command `polymarket-news-mcp`.
 
 ## How matching works
