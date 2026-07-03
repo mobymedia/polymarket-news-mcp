@@ -162,6 +162,22 @@ def latest_matched_news(top_k: int = 10, max_age_hours: float = 12.0) -> list[di
     return out[:top_k]
 
 
+# Opt-in trading (v0.2.0): tools only exist when the user configures their own key.
+# Read-only remains the default experience. See trading.py for the full design.
+import os as _os
+
+if _os.environ.get("POLYMARKET_PRIVATE_KEY"):
+    try:
+        from .trading import register_trading_tools
+
+        register_trading_tools(mcp)
+    except ImportError:
+        import sys as _sys
+
+        print("POLYMARKET_PRIVATE_KEY is set but the trading extra is not installed: "
+              "pip install 'polymarket-news-mcp[trading]'", file=_sys.stderr)
+
+
 def main() -> None:
     import argparse
 
