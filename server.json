@@ -1,8 +1,8 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
-  "name": "io.github.YOURUSER/polymarket-news-mcp",
+  "name": "io.github.mobymedia/polymarket-news-mcp",
   "description": "Match news headlines to the Polymarket prediction markets they could move - live odds, deep links, explainable matching",
-  "repository": { "url": "https://github.com/YOURUSER/polymarket-news-mcp", "source": "github" },
+  "repository": { "url": "https://github.com/mobymedia/polymarket-news-mcp", "source": "github" },
   "version": "0.1.0",
   "packages": [{
     "registry_type": "pypi",
