@@ -32,5 +32,16 @@ if tok:
     vw = get(f"https://api.github.com/repos/{REPO}/traffic/views", tok)
     print(f"clones 14d: {cl.get('count', '?')} ({cl.get('uniques', '?')} unique)   "
           f"views 14d: {vw.get('count', '?')} ({vw.get('uniques', '?')} unique)")
+
+# PyPI downloads (ingestion lags ~1 day; excludes some mirrors)
+for period, label in [("recent", None)]:
+    d = get("https://pypistats.org/api/packages/polymarket-news-mcp/recent")
+    if "data" in d:
+        dd = d["data"]
+        print(f"pypi downloads: {dd.get('last_day','?')} yesterday · "
+              f"{dd.get('last_week','?')} last 7d · {dd.get('last_month','?')} last 30d")
+    else:
+        print("pypi downloads: no data yet (stats lag ~24h after publish)")
+
 print("\nTRIGGER BAR (set 2026-07-03): sustained 1,000+ weekly tool calls or unsolicited")
 print("'can I pay for X' issues -> revisit paid tier. Below that: keep it free.")
