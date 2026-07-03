@@ -2,12 +2,19 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
   "name": "io.github.mobymedia/polymarket-news-mcp",
   "description": "Match news headlines to the Polymarket prediction markets they move - live odds and deep links",
-  "repository": { "url": "https://github.com/mobymedia/polymarket-news-mcp", "source": "github" },
-  "version": "0.1.0",
-  "packages": [{
-    "registryType": "pypi",
-    "identifier": "polymarket-news-mcp",
-    "version": "0.1.0",
-    "transport": { "type": "stdio" }
-  }]
+  "repository": {
+    "url": "https://github.com/mobymedia/polymarket-news-mcp",
+    "source": "github"
+  },
+  "version": "0.2.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "polymarket-news-mcp",
+      "version": "0.2.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
 }
