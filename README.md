@@ -1,4 +1,5 @@
 # polymarket-news-mcp
+<!-- mcp-name: io.github.mobymedia/polymarket-news-mcp -->
 
 **Give an AI agent a headline — get the Polymarket markets it moves.**
 

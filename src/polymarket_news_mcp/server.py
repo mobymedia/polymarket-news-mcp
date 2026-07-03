@@ -163,7 +163,19 @@ def latest_matched_news(top_k: int = 10, max_age_hours: float = 12.0) -> list[di
 
 
 def main() -> None:
-    mcp.run()
+    import argparse
+
+    ap = argparse.ArgumentParser(description="polymarket-news MCP server")
+    ap.add_argument("--http", action="store_true",
+                    help="serve over streamable HTTP instead of stdio (for remote hosting)")
+    ap.add_argument("--port", type=int, default=8000, help="HTTP port (with --http)")
+    args = ap.parse_args()
+    if args.http:
+        mcp.settings.port = args.port
+        mcp.settings.host = "0.0.0.0"
+        mcp.run(transport="streamable-http")
+    else:
+        mcp.run()
 
 
 if __name__ == "__main__":

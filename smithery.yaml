@@ -1,0 +1,8 @@
+# Smithery listing manifest — https://smithery.ai
+startCommand:
+  type: stdio
+  configSchema: {}
+  commandFunction: |-
+    (config) => ({ command: "polymarket-news-mcp", args: [] })
+build:
+  dockerfile: Dockerfile
