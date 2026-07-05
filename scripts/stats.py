@@ -32,6 +32,11 @@ if tok:
     vw = get(f"https://api.github.com/repos/{REPO}/traffic/views", tok)
     print(f"clones 14d: {cl.get('count', '?')} ({cl.get('uniques', '?')} unique)   "
           f"views 14d: {vw.get('count', '?')} ({vw.get('uniques', '?')} unique)")
+    ref = get(f"https://api.github.com/repos/{REPO}/traffic/popular/referrers", tok)
+    if isinstance(ref, list) and ref:
+        print("referrers 14d:", ", ".join(f"{r['referrer']} ({r['count']} views/{r['uniques']} uniq)" for r in ref[:6]))
+    else:
+        print("referrers 14d: none yet")
 
 # PyPI downloads (ingestion lags ~1 day; excludes some mirrors)
 for period, label in [("recent", None)]:
