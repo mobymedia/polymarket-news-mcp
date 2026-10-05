@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "polymarket-news-mcp"
-version = "0.2.1"
+version = "0.2.2"
 description = "MCP server that matches news headlines to the Polymarket prediction markets they could move — live odds, deep links, explainable matching"
 readme = "README.md"
 license = { text = "MIT" }
