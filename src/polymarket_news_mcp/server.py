@@ -6,7 +6,8 @@ many market-lookup MCP servers, the core tool here answers a different question:
 
 Matching is deterministic and explainable (IDF-weighted term overlap with a salience
 gate — every match reports the terms that fired), built on the public Gamma API.
-Read-only: no keys, no trading, no custody. Links and odds only.
+Read-only by default: no keys, no custody — links and odds only. Trading tools are
+opt-in (v0.2.0+) and load only when the operator sets POLYMARKET_PRIVATE_KEY.
 """
 
 from __future__ import annotations
@@ -34,8 +35,9 @@ mcp = FastMCP(
         "Tools for connecting real-world news to Polymarket prediction markets. "
         "Use match_news to find the markets a headline could move, search_markets "
         "for free-text market search, latest_matched_news for a live news-to-market "
-        "feed, trending_markets for what's moving now. All data is public/read-only; "
-        "odds are live prices in [0,1]."
+        "feed, trending_markets for what's moving now. Market data comes from public "
+        "read-only APIs; odds are live prices in [0,1]. Order-placing tools are absent "
+        "unless the operator opted into trading with their own signing key."
     ),
 )
 

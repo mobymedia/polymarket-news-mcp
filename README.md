@@ -9,7 +9,9 @@ different question: *"this just happened — where can the world's belief about 
 read?"* Matching is deterministic and explainable — every match reports the exact
 terms that fired and a confidence score, so your agent can judge the match itself.
 
-Read-only by design: no API keys, no wallet, no trading. Live odds and links only.
+**Read-only by default** — no API keys, no wallet, no custody: live odds and links only.
+Optional trading tools exist (v0.2.0+) but stay absent unless you install the `[trading]`
+extra *and* set your own signing key — see [Trading](#trading-opt-in-v020).
 
 ## Tools
 
